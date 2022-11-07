@@ -1,13 +1,51 @@
-# Sample Hardhat Project
+# EtherKyrie
 
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, and a script that deploys that contract.
+This repository contains the core smart contracts for the EtherKyrie Protocol.
 
-Try running some of the following tasks:
+## Notice
 
-```shell
-npx hardhat help
-npx hardhat test
-REPORT_GAS=true npx hardhat test
+The project is still in development version.
+
+Maybe not fully functional.
+
+## Local deployment
+
+Installing dependencies
+
+```
+yarn install
+```
+
+Compile contracts
+
+```
+yarn compile
+```
+
+Run hardhat Network
+
+```
 npx hardhat node
-npx hardhat run scripts/deploy.ts
+```
+
+Test contracts
+
+```
+yarn test
+# test specified file
+npx hardhat test test/xxx.ts
+# specified test network
+npx hardhat test --network xxx
+```
+
+Deploy contract
+
+```
+npx hardhat run scripts/deploy.ts --network xxx
+```
+
+Generate the code coverage report
+
+```
+npx hardhat coverage
 ```
