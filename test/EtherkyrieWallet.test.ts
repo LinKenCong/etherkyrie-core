@@ -10,7 +10,12 @@ const fixture = async () => {
   const WalletFactory = await ethers.getContractFactory('EtherkyrieWallet');
   const TestCoinFactory = await ethers.getContractFactory('EtherkyrieERC20');
   const WalletContract = await WalletFactory.connect(deployer).deploy();
-  const TestCoinContract = await TestCoinFactory.connect(deployer).deploy('TestCoin', 'TCT', toWei(10000));
+  const TestCoinContract = await TestCoinFactory.connect(deployer).deploy(
+    deployer.address,
+    'TestCoin',
+    'TCT',
+    toWei(10000)
+  );
   const Signers: SignerWithAccounts = {
     owner: deployer,
     other: addr1,
